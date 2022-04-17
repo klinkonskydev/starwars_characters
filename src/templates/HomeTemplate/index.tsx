@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { api } from 'services/api'
+import getPeopleList from 'services/getPeopleList'
 
 import { CharactersResponse } from 'types'
 
@@ -20,11 +20,10 @@ const HomeTemplate = ({ characters }: HomeTemplateProps) => {
   const getCharacters = async (pageNumber: number) => {
     try {
       setIsLoading(true)
-      const response = await api.get(`/people/?page=${pageNumber}`)
-      const data = await response.data
-      setCharacters(data)
+      const charactersResponse = await getPeopleList(pageNumber)
+      setCharacters(charactersResponse)
     } catch (error) {
-      throw new Error('An error has ocured')
+      console.log(error)
     } finally {
       setIsLoading(false)
     }

@@ -1,6 +1,4 @@
-import { ApiProps } from '../../templates/HomeTemplate'
-
-const mock: ApiProps = {
+const mock = {
   results: [
     {
       name: 'matheus',

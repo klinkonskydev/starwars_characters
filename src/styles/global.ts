@@ -1,19 +1,10 @@
 import {
   createGlobalStyle,
   css,
-  DefaultTheme,
-  GlobalStyleComponent
 } from 'styled-components'
 
-type GlobalStylesProps = {
-  removeBg?: boolean
-}
-
-const GlobalStyles: GlobalStyleComponent<
-  GlobalStylesProps,
-  DefaultTheme
-> = createGlobalStyle`
-  ${({ theme, removeBg }) => css`
+const GlobalStyles = createGlobalStyle`
+  ${({ theme }) => css`
     * {
       margin: 0;
       padding: 0;
@@ -37,10 +28,7 @@ const GlobalStyles: GlobalStyleComponent<
 
     body {
       color: ${theme.colors.white};
-      ${!removeBg &&
-      css`
-        background-color: ${theme.colors.dark_blue};
-      `}
+      background-color: ${theme.colors.dark_blue};
     }
   `}
 `

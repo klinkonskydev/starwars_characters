@@ -9,9 +9,7 @@
     "lint": "next lint",
     "generate": "yarn plop --plopfile generators/plopfile.js",
     "test": "jest",
-    "test:watch": "jest --watch",
-    "storybook": "start-storybook -p 6006 -s ./public",
-    "build-storybook": "build-storybook"
+    "test:watch": "jest --watch"
   },
   "dependencies": {
     "@emotion/react": "^11.9.0",
@@ -21,6 +19,7 @@
     "avataaars": "^2.0.0",
     "axios": "^0.26.1",
     "next": "12.1.5",
+    "nextjs-progressbar": "^0.0.14",
     "polished": "^4.2.2",
     "react": "18.0.0",
     "react-dom": "18.0.0",
@@ -28,12 +27,6 @@
   },
   "devDependencies": {
     "@babel/core": "^7.17.9",
-    "@storybook/addon-actions": "^6.4.22",
-    "@storybook/addon-essentials": "^6.4.22",
-    "@storybook/addon-interactions": "^6.4.22",
-    "@storybook/addon-links": "^6.4.22",
-    "@storybook/react": "^6.4.22",
-    "@storybook/testing-library": "^0.0.9",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.0.1",
     "@types/node": "17.0.24",
@@ -48,7 +41,6 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-react": "^7.29.4",
     "eslint-plugin-react-hooks": "^4.4.0",
-    "eslint-plugin-storybook": "^0.5.8",
     "jest": "^27.5.1",
     "jest-styled-components": "^7.0.8",
     "plop": "^3.0.5",

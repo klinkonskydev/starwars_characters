@@ -1,17 +1,15 @@
-import { api } from 'services/api'
 import HomeTemplate, { HomeTemplateProps } from 'templates/HomeTemplate'
+import getPeopleList from 'services/getPeopleList'
 
 export default function Home({ characters }: HomeTemplateProps) {
   return <HomeTemplate characters={characters} />
 }
 
 export const getStaticProps = async () => {
-  const response = await api.get('/people/?page=1')
-  const data = await response.data
-
+  const characters = await getPeopleList()
   return {
     props: {
-      characters: data
+      characters
     }
   }
 }
