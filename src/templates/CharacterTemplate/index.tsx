@@ -52,7 +52,7 @@ const CharacterTemplate = ({ people }: CharacterProps) => {
         <S.Paragraph>Skin Color: {people.skin_color}</S.Paragraph>
         <S.Paragraph>Height: {people.height}</S.Paragraph>
         <S.Paragraph>Birth Year: {people.birth_year}</S.Paragraph>
-        <S.Paragraph>Birth mass: {people.mass}</S.Paragraph>
+        <S.Paragraph>Mass: {people.mass}</S.Paragraph>
         <S.Paragraph>Homeword: {people.homeworld}</S.Paragraph>
         {!!people.films.length && (
           <S.Paragraph>Films: {people.films.join(', ')}</S.Paragraph>
