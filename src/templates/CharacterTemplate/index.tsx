@@ -4,8 +4,7 @@ import Avatar from 'components/Avatar'
 import Head from 'next/head'
 import * as S from './styles'
 
-export type CharacterProps = {
-  people: {
+export type CharacterProps = { people: {
     name: string
     gender: 'male' | 'female' | 'n/a'
     skin_color: string

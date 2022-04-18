@@ -25,41 +25,40 @@ describe('<CharacterTemplate />', () => {
   it('should render the heading', () => {
     render(<CharacterTemplate {...props} />)
 
-    expect(screen.getByText(`Name: ${props.people.name}`)).toBeInTheDocument()
-    expect(screen.getByText(`Gender: ${props.people.gender}`)).toBeInTheDocument()
+    expect(screen.getByText(props.people.gender)).toBeInTheDocument()
     expect(
-      screen.getByText(`Hair Color: ${props.people.hair_color}`)
+      screen.getByText(props.people.hair_color)
     ).toBeInTheDocument()
     expect(
-      screen.getByText(`Skin Color: ${props.people.skin_color}`)
-    ).toBeInTheDocument()
-
-    expect(
-      screen.getByText(`Height: ${props.people.height}`)
+      screen.getByText(props.people.skin_color)
     ).toBeInTheDocument()
 
     expect(
-      screen.getByText(`Birth Year: ${props.people.birth_year}`)
+      screen.getByText(props.people.height)
     ).toBeInTheDocument()
 
     expect(
-      screen.getByText(`Mass: ${props.people.mass}`)
+      screen.getByText(props.people.birth_year)
     ).toBeInTheDocument()
 
     expect(
-      screen.getByText(`Films: ${props.people.films[0]}`)
+      screen.getByText(props.people.mass)
     ).toBeInTheDocument()
 
     expect(
-      screen.getByText(`Species: ${props.people.species[0]}`)
+      screen.getByText(props.people.films[0])
     ).toBeInTheDocument()
 
     expect(
-      screen.getByText(`Starships: ${props.people.starships[0]}`)
+      screen.getByText(props.people.species[0])
     ).toBeInTheDocument()
 
     expect(
-      screen.getByText(`Vehicles: ${props.people.vehicles[0]}`)
+      screen.getByText(props.people.starships[0])
+    ).toBeInTheDocument()
+
+    expect(
+      screen.getByText(props.people.vehicles[0])
     ).toBeInTheDocument()
 
   })

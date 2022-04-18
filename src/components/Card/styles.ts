@@ -1,4 +1,4 @@
-import { Card, CardContent, Typography } from '@mui/material'
+import { Card, CardContent } from '@mui/material'
 import styled, { css } from 'styled-components'
 
 export const Wrapper = styled(Card)``
@@ -20,7 +20,7 @@ export const Heading = styled.h2`
   `}
 `
 
-export const Paragraph = styled(Typography)`
+export const Paragraph = styled.p`
   ${({ theme }) => css`
     color: ${theme.colors.gray};
     font-size: ${theme.font.sizes.normal};
