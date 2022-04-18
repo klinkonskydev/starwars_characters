@@ -35,7 +35,6 @@ const CharacterTemplate = ({ people }: CharacterProps) => {
     <>
       <Head>
         <title>Character - {people.name}</title>
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <S.Wrapper>
         <S.AvatarWrapper>

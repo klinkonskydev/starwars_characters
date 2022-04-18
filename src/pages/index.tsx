@@ -7,7 +7,6 @@ export default function Home({ characters }: HomeTemplateProps) {
     <>
       <Head>
         <title>Starwars characters</title>
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <HomeTemplate characters={characters} />
     </>
