@@ -31,7 +31,6 @@ export type CharacterProps = {
 }
 
 const CharacterTemplate = ({ people }: CharacterProps) => {
-  console.log(people)
   return (
     <S.Wrapper>
       <S.AvatarWrapper>
