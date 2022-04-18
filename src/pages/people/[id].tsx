@@ -8,7 +8,6 @@ import CharacterTemplate, { CharacterProps } from 'templates/CharacterTemplate'
 
 const Character = ({ people }: CharacterProps) => {
   const router = useRouter()
-  console.log(people)
 
   return (
     <>
