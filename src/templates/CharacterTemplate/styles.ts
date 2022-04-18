@@ -45,6 +45,7 @@ export const Paragraph = styled.p`
 
 export const Content = styled.div`
   ${({ theme }) => css`
+    min-width: 39.2rem;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
