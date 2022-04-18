@@ -4,43 +4,22 @@ import { render } from 'utils/test-utils'
 
 import NavigateBar from '.'
 
-const onButtonClick = jest.fn()
-
 describe('<NavigateBar />', () => {
-  beforeEach(() => {
-    render(<NavigateBar array={[1, 2]} loading={false} initialValue={1} onButtonClick={onButtonClick} />)
-  })
+  it('should render correctly', async () => {
+    const onChangeMock = jest.fn()
+    render(<NavigateBar disabled={false} count={10} onChange={onChangeMock} />)
 
-  it('should render correctly', () => {
-    expect(
-      screen.getByRole('button', { name: /previous/i })
-    ).toBeInTheDocument()
-    expect(screen.getByRole('button', { name: /1/ })).toBeInTheDocument()
-    expect(screen.getByRole('button', { name: /2/ })).toBeInTheDocument()
-    expect(screen.getByRole('button', { name: /next/i })).toBeInTheDocument()
-  })
+    const nextPage = screen.getByRole('button', { name: /go to next page/i });
 
-  it('should switch the current page', async () => {
-    expect(screen.getByText(/current page: 1/i)).toBeInTheDocument()
+    expect(nextPage).toBeInTheDocument()
 
-    userEvent.click(screen.getByRole('button', { name: /2/ }))
+    userEvent.click(nextPage)
 
     await waitFor(() => {
-      expect(screen.queryByText(/current page: 1/i)).not.toBeInTheDocument()
-    })
-    expect(screen.getByText(/current page: 2/i)).toBeInTheDocument()
-  })
-
-  it('should return the value when the button has been clicked', async () => {
-
-    expect(screen.getByText(/current page: 1/i)).toBeInTheDocument()
-
-    userEvent.click(screen.getByRole('button', { name: /2/ }))
-
-    await waitFor(() => {
-      expect(onButtonClick).toBeCalled()
+      expect(onChangeMock).toBeCalled()
     })
 
-    expect(onButtonClick).toBeCalledWith(2)
+    expect(onChangeMock).toBeCalledWith(2)
+
   })
 })
