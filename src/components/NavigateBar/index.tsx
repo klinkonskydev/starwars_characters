@@ -1,4 +1,5 @@
 import Pagination from '@mui/material/Pagination'
+import { useRouter } from 'next/router'
 import * as S from './styles'
 
 export type NavigateBarProps = {
@@ -8,6 +9,7 @@ export type NavigateBarProps = {
 }
 
 const NavigateBar = ({ disabled, count, onChange }: NavigateBarProps) => {
+  const { query } = useRouter()
   const handleChange = (page: number) => {
     onChange(page)
   }
@@ -15,7 +17,7 @@ const NavigateBar = ({ disabled, count, onChange }: NavigateBarProps) => {
   return (
     <S.Wrapper>
       <Pagination
-        defaultPage={1}
+        defaultPage={Number(query.page || 1)}
         count={Math.ceil(count / 10)}
         disabled={disabled}
         onChange={(_, pageSelect) => handleChange(pageSelect)}

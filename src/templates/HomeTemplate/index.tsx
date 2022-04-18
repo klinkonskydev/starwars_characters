@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useRouter } from 'next/router'
 import getPeopleList from 'services/getPeopleList'
 
 import { CharactersResponse } from 'types'
@@ -18,6 +19,8 @@ const HomeTemplate = ({ characters }: HomeTemplateProps) => {
   const [charactersData, setCharacters] = useState(() => characters)
   const [loading, setIsLoading] = useState(false)
 
+  const { push } = useRouter()
+
   const getCharacters = async (pageNumber: number) => {
     try {
       setIsLoading(true)
@@ -32,6 +35,12 @@ const HomeTemplate = ({ characters }: HomeTemplateProps) => {
 
   const handleChangePagination = (page: number) => {
     getCharacters(page)
+    push({
+      pathname: '/',
+      query: {
+        page
+      }
+    })
   }
 
   return (

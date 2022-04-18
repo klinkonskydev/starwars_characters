@@ -1,10 +1,12 @@
 import ArrowLeftIcon from '@mui/icons-material/ArrowLeft'
+import { useRouter } from 'next/router'
 
 import Avatar from 'components/Avatar'
 import Head from 'next/head'
 import * as S from './styles'
 
-export type CharacterProps = { people: {
+export type CharacterProps = {
+  people: {
     name: string
     gender: 'male' | 'female' | 'n/a'
     skin_color: string
@@ -31,6 +33,8 @@ export type CharacterProps = { people: {
 }
 
 const CharacterTemplate = ({ people }: CharacterProps) => {
+  const router = useRouter()
+
   return (
     <>
       <Head>
@@ -45,11 +49,13 @@ const CharacterTemplate = ({ people }: CharacterProps) => {
             eyeColor={people.eye_color}
           />
           <S.Heading>{people.name}</S.Heading>
-          <S.Link href="/">
-            <S.Button variant="outlined" startIcon={<ArrowLeftIcon />}>
-              voltar
-            </S.Button>
-          </S.Link>
+          <S.Button
+            variant="outlined"
+            startIcon={<ArrowLeftIcon />}
+            onClick={() => router.back()}
+          >
+            voltar
+          </S.Button>
         </S.AvatarWrapper>
         <S.Content>
           <div>
