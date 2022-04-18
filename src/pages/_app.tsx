@@ -7,21 +7,27 @@ import { GlobalStyles } from 'styles/global'
 
 import MUITheme from 'styles/material-ui-theme'
 import theme from 'styles/theme'
+import Head from 'next/head'
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <ThemeProvider theme={theme}>
-      <MUIThemeProvider theme={MUITheme}>
-      <GlobalStyles />
-      <Component {...pageProps} />
-      <NextNProgress
-        color="#E6B13B"
-        startPosition={0.3}
-        stopDelayMs={200}
-        height={3}
-        showOnShallow={true}
-      />
-      </MUIThemeProvider>
-    </ThemeProvider>
+    <>
+      <Head>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
+      <ThemeProvider theme={theme}>
+        <MUIThemeProvider theme={MUITheme}>
+          <GlobalStyles />
+          <Component {...pageProps} />
+          <NextNProgress
+            color="#E6B13B"
+            startPosition={0.3}
+            stopDelayMs={200}
+            height={3}
+            showOnShallow={true}
+          />
+        </MUIThemeProvider>
+      </ThemeProvider>
+    </>
   )
 }
