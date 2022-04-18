@@ -4,6 +4,7 @@ import getPeopleList from 'services/getPeopleList'
 import { CharactersResponse } from 'types'
 
 import CardList from 'components/CardList'
+import CardListSkeleton from 'components/CardList/skeleton'
 import Header from 'components/Header'
 import NavigateBar from 'components/NavigateBar'
 
@@ -37,7 +38,7 @@ const HomeTemplate = ({ characters }: HomeTemplateProps) => {
     <S.Wrapper>
       <Header />
 
-      <CardList items={charactersData} />
+      {loading ? <CardListSkeleton /> : <CardList items={charactersData} />}
 
       <NavigateBar
         count={charactersData.count}

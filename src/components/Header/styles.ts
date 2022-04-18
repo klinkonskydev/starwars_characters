@@ -1,12 +1,16 @@
 import styled, { css } from 'styled-components'
+
 import NextImage from 'next/image'
 
 export const Wrapper = styled.header`
+  ${({ theme }) => css`
+  padding: ${theme.spacings.big} 0;
   width: 100%;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
+`}
 `
 
 export const Image = styled(NextImage)`
