@@ -1,6 +1,6 @@
 import axios from 'axios'
 import Header from 'components/Header'
-import PeopleSkeleton from 'components/PeopleSkeleton'
+import PeopleSkeleton from 'templates/CharacterTemplate/skeleton'
 import { GetStaticProps } from 'next'
 import { useRouter } from 'next/router'
 import { api } from 'services/api'
@@ -42,7 +42,9 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   const getData = async (array: string[], key: string) => {
     const arrayPromisses = array.map(url => axios.get(url))
-    const response = (await Promise.all(arrayPromisses)).map(res => res.data[key])
+    const response = (await Promise.all(arrayPromisses)).map(
+      res => res.data[key]
+    )
 
     return response
   }
