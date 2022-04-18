@@ -22,7 +22,8 @@ export const Heading = styled.h2`
 
 export const Paragraph = styled(Typography)`
   ${({ theme }) => css`
-    font-size: ${theme.font.sizes.small};
+    color: ${theme.colors.gray};
+    font-size: ${theme.font.sizes.normal};
     font-weight: ${theme.font.weight.regular};
     font-family: ${theme.font.family};
 

@@ -5,7 +5,9 @@ import NextImage from 'next/image'
 export const Wrapper = styled.header`
   ${({ theme }) => css`
   padding: ${theme.spacings.big} 0;
-  width: 100%;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
 
   display: flex;
   flex-direction: column;
@@ -14,6 +16,7 @@ export const Wrapper = styled.header`
 `
 
 export const Image = styled(NextImage)`
+  cursor: pointer;
   filter: brightness(0.8);
 `
 

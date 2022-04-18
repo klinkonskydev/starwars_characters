@@ -31,28 +31,61 @@ export const AvatarWrapper = styled.div`
   `}
 `
 
-export const Content = styled.div`
+export const Heading = styled.h2`
   ${({ theme }) => css`
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 0 ${theme.spacings.normal};
-    gap: ${theme.spacings.small};
-
-    @media (max-width: 695px) {
-      align-items: center;
-    }
+    color: ${theme.colors.primary};
+    font-size: ${theme.font.sizes.normal};
   `}
 `
 
 export const Paragraph = styled.p`
   max-width: 35rem;
-  @media (max-width: 695px) {
-    text-align: center;
-  }
+  text-align: center;
 `
 
+export const Content = styled.div`
+  ${({ theme }) => css`
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: ${theme.spacings.small};
+
+    padding: ${theme.spacings.big};
+    margin-top: ${theme.spacings.big};
+
+    border: 1px solid ${theme.colors.gray};
+    box-shadow: 0 0 4px 0 ${theme.colors.gray} inset;
+    border-radius: 4px;
+
+    & div {
+      width: 100%;
+      display: flex;
+      align-items: center;
+
+      & ${Paragraph}:first-child {
+        color: ${theme.colors.gray};
+      }
+
+      & ${Paragraph}:last-child {
+        margin-left: auto;
+      }
+    }
+
+    & section {
+      margin-bottom: ${theme.spacings.normal};
+
+      & ${Paragraph}:first-child {
+        color: ${theme.colors.gray};
+      }
+    }
+
+    @media (max-width: 695px) {
+      align-items: center;
+      border: 0;
+      box-shadow: none;
+    }
+  `}
+`
 export const Link = styled(NextLink)``
 
 export const Button = styled(MUIButton)``
-
