@@ -12,7 +12,7 @@ const Character = ({ people }: CharacterProps) => {
   return (
     <>
       <Header />
-      {!router.isFallback ? (
+      {router.isFallback ? (
         <PeopleSkeleton />
       ) : (
         <CharacterTemplate people={people} />
