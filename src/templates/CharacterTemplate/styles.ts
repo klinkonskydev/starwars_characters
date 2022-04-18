@@ -81,7 +81,7 @@ export const Content = styled.div`
     }
 
     @media (max-width: 705px) {
-      margin-top: 0;
+      min-width: 100%;
       align-items: center;
       border: 0;
       box-shadow: none;
