@@ -25,7 +25,7 @@ export const AvatarWrapper = styled.div`
 
     gap: ${theme.spacings.normal};
 
-    @media (max-width: 695px) {
+    @media (max-width:  705px) {
       margin-bottom: ${theme.spacings.big};
     }
   `}
@@ -80,7 +80,8 @@ export const Content = styled.div`
       }
     }
 
-    @media (max-width: 695px) {
+    @media (max-width: 705px) {
+      margin-top: 0;
       align-items: center;
       border: 0;
       box-shadow: none;
