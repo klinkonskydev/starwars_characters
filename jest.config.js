@@ -5,23 +5,17 @@ const createJestConfig = nextJest({
 })
 
 const customJestConfig = {
-  testEnvironment: 'jsdom',
+  testEnvironment: 'jest-environment-jsdom',
   setupFilesAfterEnv: ['<rootDir>/.jest/setup.ts'],
   testPathIgnorePatterns: ['/node_modules/', '/.next/'],
-  modulePaths: ['<rootDir>/src/', '<rootDir>/.jest'],
-  moduleDirectories: ['node_modules', '<rootDir>/'],
-  testEnvironment: 'jest-environment-jsdom',
+  modulePaths: ['<rootDir>/src', '<rootDir>/.jest'],
+  moduleDirectories: ['node_modules', '<rootDir>/src'],
   collectCoverage: true,
   collectCoverageFrom: [
-    'src/**/*.ts(x)?',
+    'src/components/**/*.ts(x)?',
+    '!src/templates/**/*.ts(x)?',
     '!src/**/stories.tsx',
-    '!src/pages/**/*.tsx',
-    '!src/styles/**/*.ts',
-    '!src/utils/apollo.ts',
-    '!src/utils/apolloCache.ts',
-    '!src/types/**/*.d.ts',
-    '!src/graphql/**/*.ts',
-    '!src/**/mock.ts'
+    '!src/**/skeleton.tsx'
   ]
 }
 
