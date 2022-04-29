@@ -16,6 +16,7 @@ export const Wrapper = styled.header`
 export const Image = styled.img`
   width: 15rem;
   height: 8rem;
+  margin: 0 auto;
 
   cursor: pointer;
   filter: brightness(0.8);
