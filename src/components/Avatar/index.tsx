@@ -4,6 +4,22 @@ import firstLetterUppercase from 'utils/first-letter-uppercase'
 import { AvatarProps } from 'types'
 import * as S from './styles'
 
+const avatarStyle = {
+  'n/a': {
+    topType: 'NoHair'
+  },
+
+  male: {
+    topType: 'ShortHairShortFlat'
+  },
+
+  female: {
+    topType: 'LongHairCurvy',
+    clotheType: 'ShirtScoopNeck',
+    clotheColor: 'Pink'
+  }
+}
+
 const AvatarComponent = ({
   skinColor,
   hairColor,
@@ -17,17 +33,7 @@ const AvatarComponent = ({
       avatarStyle="Circle"
       skinColor={firstLetterUppercase(skinColor)}
       mouthType={mouth}
-
-      {...(gender === 'n/a'
-        ? { topType: 'NoHair' }
-        : gender === 'male'
-        ? { topType: 'ShortHairShortFlat' }
-        : {
-            topType: 'LongHairCurvy',
-            clotheType: 'ShirtScoopNeck',
-            clotheColor: 'Pink'
-          })}
-
+      {...(!!gender && avatarStyle[gender])}
       {...(!!hairColor && !!gender
         ? { hairColor: firstLetterUppercase(hairColor) }
         : {})}
