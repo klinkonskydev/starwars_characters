@@ -9,7 +9,7 @@
     "lint": "next lint",
     "generate": "yarn plop --plopfile generators/plopfile.js",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "yarn test --watchAll"
   },
   "dependencies": {
     "@emotion/react": "^11.9.0",
