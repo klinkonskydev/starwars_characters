@@ -59,7 +59,7 @@ export type AvatarProps = {
     | 'Black'
     | string
   gender?: 'male' | 'female' | 'n/a'
-  eyeColor?: string
+  eyecolor?: string
 }
 
 export type CharactersResponse = {

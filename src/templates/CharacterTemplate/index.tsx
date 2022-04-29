@@ -46,7 +46,7 @@ const CharacterTemplate = ({ people }: CharacterProps) => {
             hairColor={people.hair_color}
             skinColor={people.skin_color}
             gender={people.gender}
-            eyeColor={people.eye_color}
+            eyecolor={people.eye_color}
           />
           <S.Heading>{people.name}</S.Heading>
           <S.Button

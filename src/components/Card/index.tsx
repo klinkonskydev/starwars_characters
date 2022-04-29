@@ -18,6 +18,7 @@ const Card = ({
   mouth = 'Serious'
 }: CardProps) => (
   <S.Wrapper>
+  <S.AvatarWrapper>
     <Avatar
       mouth={mouth}
       hairColor={hairColor}
@@ -25,6 +26,7 @@ const Card = ({
       gender={gender}
       eyeColor={eyeColor}
     />
+  </S.AvatarWrapper>
 
     <S.Character>
       <S.Heading>{name}</S.Heading>

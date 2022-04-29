@@ -1,8 +1,7 @@
-import styled, { css } from 'styled-components'
+import { styled } from '@mui/material/styles'
 import * as CardStyles from 'components/Card/styles'
 
-export const Wrapper = styled.div`
-  ${({ theme }) => css`
+export const Wrapper = styled('div')(({ theme }) => `
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -21,5 +20,4 @@ export const Wrapper = styled.div`
     & a {
       text-decoration: none;
     }
-  `}
-`
+`)

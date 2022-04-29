@@ -1,8 +1,6 @@
-import styled, { css } from 'styled-components'
+import { styled } from '@mui/material/styles'
 
-export const Wrapper = styled.div`
-  ${({ theme }) => css`
-
+export const Wrapper = styled('div')(({ theme }) =>`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -23,5 +21,4 @@ export const Wrapper = styled.div`
     & ul li div {
       color: ${theme.colors.white};
     }
-`}
-`
+`)

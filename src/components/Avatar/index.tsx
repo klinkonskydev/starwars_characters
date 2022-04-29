@@ -22,11 +22,11 @@ const avatarStyle = {
 const AvatarComponent = ({
   skinColor,
   hairColor,
-  eyeColor,
+  eyecolor,
   gender,
   mouth = 'Serious'
 }: AvatarProps) => (
-  <S.AvatarsWrapper eyeColor={eyeColor}>
+  <S.AvatarsWrapper eyecolor={eyecolor}>
     <S.Avatar
       avatarStyle="Circle"
       skinColor={firstLetterUppercase(skinColor)}

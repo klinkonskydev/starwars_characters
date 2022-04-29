@@ -1,13 +1,12 @@
+import Head from 'next/head'
 import type { AppProps } from 'next/app'
+
 import NextNProgress from 'nextjs-progressbar'
 
-import { ThemeProvider as MUIThemeProvider } from '@mui/material/styles'
-import { ThemeProvider } from 'styled-components'
-import { GlobalStyles } from 'styles/global'
+import { CssBaseline } from '@mui/material'
+import { ThemeProvider } from '@mui/material/styles'
 
-import MUITheme from 'styles/material-ui-theme'
-import theme from 'styles/theme'
-import Head from 'next/head'
+import theme from 'styles/global'
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -15,9 +14,8 @@ export default function App({ Component, pageProps }: AppProps) {
       <Head>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <ThemeProvider theme={theme}>
-        <MUIThemeProvider theme={MUITheme}>
-          <GlobalStyles />
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
           <Component {...pageProps} />
           <NextNProgress
             color="#E6B13B"
@@ -26,8 +24,7 @@ export default function App({ Component, pageProps }: AppProps) {
             height={3}
             showOnShallow={true}
           />
-        </MUIThemeProvider>
-      </ThemeProvider>
+        </ThemeProvider>
     </>
   )
 }

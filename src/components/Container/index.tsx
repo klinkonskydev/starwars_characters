@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import { styled } from "@mui/material/styles";
 
-const Container = styled.main`
+const Container = styled("main")`
   width: 100%;
   max-width: 104.4rem;
 

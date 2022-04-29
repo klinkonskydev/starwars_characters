@@ -1,36 +1,63 @@
-import {
-  createGlobalStyle,
-  css,
-} from 'styled-components'
+import { createTheme } from '@mui/material/styles'
+import globalTheme from './theme'
 
-const GlobalStyles = createGlobalStyle`
-  ${({ theme }) => css`
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+type GlobalTheme = typeof globalTheme
 
-      font-family: ${theme.font.family};
-      font-size: ${theme.font.sizes.normal};
-      font-weight: ${theme.font.weight.regular};
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-
-      &::after,
-      &::before {
-        box-sizing: inherit;
-      }
+const theme = createTheme({
+  typography: {
+    fontFamily: [
+      'Inter',
+      '-apple-system',
+      'BlinkMacSystemFont',
+      '"Segoe UI"',
+      'Roboto',
+      '"Helvetica Neue"',
+      'Arial',
+      'sans-serif',
+      '"Apple Color Emoji"',
+      '"Segoe UI Emoji"',
+      '"Segoe UI Symbol"'
+    ].join(',')
+  },
+  palette: {
+    background: {
+      default: '#2D3748'
+    },
+    primary: {
+      main: '#E6B13B'
     }
+  },
+  components: {
+    MuiCssBaseline: {
+      styleOverrides: `
+        * {
+          --webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
 
-    html {
-      font-size: 62.5%;
+          font-family: Inter, -apple-system, Roboto;
+          font-size: 1.6rem;
+          font-weight: 400;
+
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+
+        html  {
+          font-size: 62.5%;
+        }
+
+        body {
+          color: #CFD4D8;
+        }
+      `
     }
+  },
+  ...globalTheme
+})
 
-    body {
-      color: ${theme.colors.white};
-      background-color: ${theme.colors.dark_blue};
-    }
-  `}
-`
+declare module '@mui/material/styles' {
+  interface Theme extends GlobalTheme {}
+}
 
-export { GlobalStyles }
+export default theme
