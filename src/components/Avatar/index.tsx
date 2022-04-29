@@ -1,4 +1,3 @@
-import Avatar from 'avataaars'
 import firstLetterUppercase from 'utils/first-letter-uppercase'
 
 import { AvatarProps } from 'types'
@@ -28,8 +27,7 @@ const AvatarComponent = ({
   mouth = 'Serious'
 }: AvatarProps) => (
   <S.AvatarsWrapper eyeColor={eyeColor}>
-    <Avatar
-      style={{ width: '100%', height: '100%' }}
+    <S.Avatar
       avatarStyle="Circle"
       skinColor={firstLetterUppercase(skinColor)}
       mouthType={mouth}

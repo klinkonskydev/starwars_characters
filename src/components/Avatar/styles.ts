@@ -1,3 +1,4 @@
+import Avataaars from 'avataaars'
 import styled, { css } from 'styled-components'
 import { AvatarProps } from 'types'
 
@@ -14,4 +15,9 @@ export const AvatarsWrapper = styled.div<Pick<AvatarProps, 'eyeColor'>>`
       fill: ${eyeColor};
     }
   `}
+`
+
+export const Avatar = styled(Avataaars)`
+  width: 100%;
+  height: 100%;
 `
