@@ -19,36 +19,27 @@ const CharacterTemplate = () => {
           height={22}
         />
       </S.AvatarWrapper>
-      <S.Content style={{ boxShadow: 'none', border: 0 }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-          <Skeleton animation="wave" variant="text" width={58} height={20} />
-          <Skeleton animation="wave" variant="text" width={58} height={20} />
-        </div>
-        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-          <Skeleton animation="wave" variant="text" width={58} height={20} />
-          <Skeleton animation="wave" variant="text" width={58} height={20} />
-        </div>
-        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-          <Skeleton animation="wave" variant="text" width={58} height={20} />
-          <Skeleton animation="wave" variant="text" width={58} height={20} />
-        </div>
-        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-          <Skeleton animation="wave" variant="text" width={58} height={20} />
-          <Skeleton animation="wave" variant="text" width={58} height={20} />
-        </div>
-        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-          <Skeleton animation="wave" variant="text" width={58} height={20} />
-          <Skeleton animation="wave" variant="text" width={58} height={20} />
-        </div>
-        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-          <Skeleton animation="wave" variant="text" width={58} height={20} />
-          <Skeleton animation="wave" variant="text" width={58} height={20} />
-        </div>
-        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-          <Skeleton animation="wave" variant="text" width={58} height={20} />
-          <Skeleton animation="wave" variant="text" width={58} height={20} />
-        </div>
-        <section style={{ display: 'flex', flexDirection: 'column' }}>
+      <S.Content>
+        {Array(7)
+          .fill(0)
+          .map((_, index) => (
+            <div key={index}>
+              <Skeleton
+                animation="wave"
+                variant="text"
+                width={'50%'}
+                height={20}
+              />
+              <Skeleton
+                animation="wave"
+                variant="text"
+                width={'45%'}
+                height={20}
+              />
+            </div>
+          ))}
+
+        <section>
           <Skeleton
             animation="wave"
             variant="text"
