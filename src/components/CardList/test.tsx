@@ -14,6 +14,8 @@ describe('<CardList />', () => {
   it('should render the heading', () => {
     render(<CardList items={items} />)
 
-    expect(screen.getAllByTestId(/mock card/i)).toHaveLength(items.results.length)
+    expect(screen.getAllByTestId(/mock card/i)).toHaveLength(
+      items.results.length
+    )
   })
 })

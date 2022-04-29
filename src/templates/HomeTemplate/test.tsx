@@ -1,8 +1,18 @@
-import { screen } from '@testing-library/react'
+import { screen, waitFor } from '@testing-library/react'
 import { render } from 'utils/test-utils'
+import userEvent from '@testing-library/user-event'
+
 import { CharactersResponse } from 'types'
 
 import HomeTemplate from '.'
+
+import charactersMock from 'components/CardList/mock'
+const getPeopleListMock = jest.fn()
+
+jest.mock('services/getPeopleList', () => ({
+  __esModule: true,
+  default: ({ page }: { page: number }) => getPeopleListMock(page)
+}))
 
 jest.mock('components/Header', () => ({
   __esModule: true,
@@ -19,9 +29,16 @@ jest.mock('components/CardList/skeleton', () => ({
   default: () => <div data-testid="mock CardListSkeleton" />
 }))
 
-jest.mock('components/NavigateBar', () => ({
+const pushMock = jest.fn()
+
+jest.mock('next/router', () => ({
   __esModule: true,
-  default: () => <div data-testid="mock NavigateBar" />
+  useRouter: () => ({
+    push: () => pushMock(),
+    query: () => ({
+      page: 1
+    })
+  })
 }))
 
 const items: CharactersResponse = {
@@ -37,6 +54,18 @@ describe('<HomeTemplate />', () => {
 
     expect(screen.getByTestId(/mock header/i)).toBeInTheDocument()
     expect(screen.getByTestId(/mock CardList/i)).toBeInTheDocument()
-    expect(screen.getByTestId(/mock NavigateBar/i)).toBeInTheDocument()
+  })
+
+  it('should render the itens correctly', async () => {
+    render(<HomeTemplate characters={charactersMock} />)
+
+    const nextButton = screen.getByRole('button', { name: /go to page 4/i })
+
+    expect(nextButton).toBeInTheDocument()
+    userEvent.click(nextButton)
+
+    await waitFor(() => {
+      expect(getPeopleListMock).toBeCalled()
+    })
   })
 })

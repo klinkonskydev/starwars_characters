@@ -1,7 +1,5 @@
 import styled, { css } from 'styled-components'
 
-import NextImage from 'next/image'
-
 export const Wrapper = styled.header`
   ${({ theme }) => css`
   padding: ${theme.spacings.big} 0;
@@ -15,7 +13,10 @@ export const Wrapper = styled.header`
 `}
 `
 
-export const Image = styled(NextImage)`
+export const Image = styled.img`
+  width: 15rem;
+  height: 8rem;
+
   cursor: pointer;
   filter: brightness(0.8);
 `

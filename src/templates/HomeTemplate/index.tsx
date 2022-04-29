@@ -22,15 +22,12 @@ const HomeTemplate = ({ characters }: HomeTemplateProps) => {
   const { push } = useRouter()
 
   const getCharacters = async (pageNumber: number) => {
-    try {
-      setIsLoading(true)
-      const charactersResponse = await getPeopleList(pageNumber)
-      setCharacters(charactersResponse)
-    } catch (error) {
-      console.log(error)
-    } finally {
-      setIsLoading(false)
-    }
+    setIsLoading(true)
+
+    const charactersResponse = await getPeopleList(pageNumber)
+    setCharacters(charactersResponse)
+
+    setIsLoading(false)
   }
 
   const handleChangePagination = (page: number) => {
