@@ -18,20 +18,18 @@ const Card = ({
   mouth = 'Serious'
 }: CardProps) => (
   <S.Wrapper>
-    <S.Content>
-      <Avatar
-        mouth={mouth}
-        hairColor={hairColor}
-        skinColor={skinColor}
-        gender={gender}
-        eyeColor={eyeColor}
-      />
+    <Avatar
+      mouth={mouth}
+      hairColor={hairColor}
+      skinColor={skinColor}
+      gender={gender}
+      eyeColor={eyeColor}
+    />
 
-      <div>
-        <S.Heading>{name}</S.Heading>
-        <S.Paragraph>Homeworld: {homeworld}</S.Paragraph>
-      </div>
-    </S.Content>
+    <S.Character>
+      <S.Heading>{name}</S.Heading>
+      <S.Paragraph>Homeworld: {homeworld}</S.Paragraph>
+    </S.Character>
   </S.Wrapper>
 )
 

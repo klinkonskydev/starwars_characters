@@ -45,14 +45,12 @@ const CharacterTemplate = () => {
             variant="text"
             width={58}
             height={20}
-            style={{ margin: '0 auto' }}
           />
           <Skeleton
             animation="wave"
             variant="text"
             width={100}
             height={20}
-            style={{ margin: '0 auto' }}
           />
         </section>
       </S.Content>

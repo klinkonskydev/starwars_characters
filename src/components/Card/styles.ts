@@ -1,11 +1,13 @@
-import { Card, CardContent } from '@mui/material'
+import { Card } from '@mui/material'
 import styled, { css } from 'styled-components'
 
-export const Wrapper = styled(Card)``
+export const Wrapper = styled(Card)`
+  ${({ theme }) => css`
+    display: flex;
+    align-items: center;
 
-export const Content = styled(CardContent)`
-  display: flex;
-  align-items: center;
+    padding: ${theme.spacings.normal};
+  `}
 `
 
 export const Heading = styled.h2`
@@ -18,6 +20,11 @@ export const Heading = styled.h2`
     overflow: hidden;
     text-overflow: ellipsis;
   `}
+`
+
+export const Character = styled.div`
+  flex: 1;
+  margin-left: 1em;
 `
 
 export const Paragraph = styled.p`
